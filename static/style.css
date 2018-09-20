@@ -1,0 +1,180 @@
+body {
+    background: url("../static/bg.png");
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.user-vote-color {
+    color: red;
+}
+
+.jumbotron > h1 {
+    color: #111111;
+}
+
+.footer > .text-center > p {
+    color: #000000;
+}
+
+.indv-post-container-u, .indv-post-container-a {
+    border: 0.1em solid black;
+    padding: 1em;
+    margin: 1% 27%;
+    border-radius: 0.2em;
+    background-color: rgba(106, 106, 106, 0.3);
+    font-family: 'Myriad Pro', 'Tw Cen MT', Arial, Verdana, serif;
+}
+
+.indv-post-container-u:hover {
+    box-shadow: dodgerblue 2px 2px;
+    background-color: rgba(106, 106, 106, 0.62);
+}
+
+.indv-post-container-a:hover {
+    box-shadow: lawngreen 2px 2px;
+    background-color: rgba(106, 106, 106, 0.62);
+}
+
+.post-score {
+    margin-top: -1em;
+    /*color: #13a5ff;*/
+}
+
+.post-content {
+    color: aliceblue;
+}
+
+.post-title {
+    color: #111111;
+    text-transform: uppercase;
+}
+
+.btn-success{
+    border-bottom-color: black;
+    border-top-color: dodgerblue;
+    border-left-color: dodgerblue;
+    border-right-color: dodgerblue;
+    background-color: dodgerblue;
+    width: 30%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.btn-success:hover {
+    background-color: #1869e1;
+}
+
+.btn-success.focus, .btn-success:focus {
+    background-color: #1869e1 !important;
+    box-shadow: 0 0 0 0.2rem dodgerblue !important;
+}
+
+.btn-success.active, .btn-success:active {
+    background-color: #1869e1 !important;
+    box-shadow: 0 0 0 0.2rem dodgerblue !important;
+}
+
+.jumbotron {
+    background-color: rgba(169, 169, 169, 0.3);
+    border: 0.1em solid black;;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.post-vote {
+    text-decoration: none;
+}
+
+span {
+    font-size: 150%;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.post-actions-container {
+    border: 0.1em solid black;
+    padding: 1em;
+    margin-top: -1%;
+    margin-left: 65%;
+    margin-right: 27%;
+    border-radius: 0.2em;
+    background-color: rgba(106, 106, 106, 0.3);
+    font-family: 'Myriad Pro', 'Tw Cen MT', Arial, Verdana, serif;
+}
+
+input {
+    display: inline;
+    margin: 2%;
+}
+
+label {
+    color: dodgerblue;
+    display: inline-block;
+}
+
+#admin-button {
+    display: block;
+}
+
+#admin-button > input {
+    display: inline;
+}
+
+.sign-button {
+    display: inline-block;
+}
+
+#make-post-box-u, #make-post-box-a {
+    font-size: 1.3em;
+    color: #000000;
+    border: solid 1px #000000;
+    border-radius: 0.2em;
+    resize: none;
+    background-color: rgba(169, 169, 169, 0.3);
+}
+
+#make-post-box-u:focus {
+    border: 1px solid dodgerblue;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+#make-post-box-a:focus {
+    border: 1px solid lawngreen;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+#make-post-title-u, #make-post-title-a {
+    font-size: 1.3em;
+    color: #000000;
+    border: solid 1px #000000;
+    border-radius: 0.2em;
+    resize: none;
+    background-color: rgba(169, 169, 169, 0.3);
+}
+
+#make-post-title-u:focus {
+    border: 1px solid dodgerblue;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+#make-post-title-a:focus {
+    border: 1px solid lawngreen;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+button {
+    border-radius: 0.1em;
+    border: 0.5em;
+    background-color: rgba(169, 169, 169, 0.3);
+    color: #ffffff;
+    width: 8em;
+    font-size: 20px;
+    margin-bottom: 2em;
+    border: #000000;
+}
+
+button:hover {
+    box-shadow: 0 0 10px dodgerblue;
+}

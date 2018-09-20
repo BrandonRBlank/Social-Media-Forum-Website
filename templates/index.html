@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="text-center">
+    <div class="jumbotron">
+        <h1>Database Design Final Project</h1>
+        <p class="lead"></p>
+        {% if session['logged_in'] %}
+            {% if session['is_admin'] %}
+                <p style="color: Green">Welcome {{ username }}</p>
+            {% else %}
+                <p style="color: dodgerblue">Welcome {{ username }}</p>
+            {% endif %}
+        {% else %}
+            <p><a class="btn btn-lg btn-success" href="/signup" role="button">Sign up</a></p>
+            <p><a class="btn btn-lg btn-success" href="/signin" role="button">Sign in</a></p>
+        {% endif %}
+    </div>
+</div>
+
+{% if session['logged_in'] %}
+<div class="text-center">
+    <div class="make-post-container">
+        <form action="/newpost" method="POST">
+    <label for="title"><b>Post Title</b><br>
+        {% if session['is_admin'] %}
+            <input type="text" name="title" id="make-post-title-a">
+        {% else %}
+            <input type="text" name="title" id="make-post-title-u">
+        {% endif %}
+    </label>
+    <br>
+
+    <label for="content">
+        {% if session['is_admin'] %}
+            <textarea name="content" id="make-post-box-a" cols="60" rows="7"></textarea>
+        {% else %}
+            <textarea name="content" id="make-post-box-u" cols="60" rows="7"></textarea>
+        {% endif %}
+    </label>
+
+    <br>
+    <button>Post</button>
+</form>
+    </div>
+</div>
+{% endif %}
+
+<div class="text-center">
+    <div class="show-post-container">
+        {% for post in postsList %}
+            {% if post[4] %}
+                <div class="indv-post-container-a">
+            {% else %}
+                <div class="indv-post-container-u">
+            {% endif %}
+                <div class="post-title">
+                    <h3>{{ post[1] }}</h3>
+                </div>
+                {% if post[4] %}
+                    <div class="post-score" style="color: lawngreen;">
+                {% else %}
+                    <div class="post-score" style="color: #13a5ff">
+                {% endif %}
+                <p style="display: inline;">Score: </p><p class="{{ post[0] }}" style="display: inline">{{ post[3] }}</p>
+                    </div>
+                <div class="post-content">
+                    <p>{{ post[2] }}</p>
+                </div>
+            </div>
+            {% if session['logged_in'] %}
+                <div class="post-actions-container">
+                    {% if post[0] in userVotes %}
+                        <a class="{{ post[0] }}" href="javascript:"><span class="glyphicon glyphicon-chevron-up" style="display: inline; color: grey"></span></a>
+                    {% else %}
+                        <a class="{{ post[0] }}" href="javascript:" onclick="upVote(this)"><span class="glyphicon glyphicon-chevron-up" style="display: inline "></span></a>
+                     {% endif %}
+                    {% if session['is_admin'] %}
+                        <a class="{{ post[0] }}" href="javascript:" onclick="deletePost(this)"><span class="glyphicon glyphicon-trash" style="display: inline; "></span></a>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+
+
+<footer class="footer">
+    <div class="text-center">
+        <p>Fernando | Brandon | Jennifer &copy; COP4710 Database Design</p>
+    </div>
+</footer>
+{% endblock %}

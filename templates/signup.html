@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="text-center">
+    <div class="jumbotron">
+        <h1 style="margin-bottom: 2%">Sign up</h1>
+        <h6 style="color: red"><b>{{error}}</b></h6>
+        <p class="lead"></p>
+        <form action="/signup" method="POST">
+            <label for="username"><b>USERNAME</b>
+                <input type="text" name="username">
+            </label>
+
+            <label for="pwd"><b>PASSWORD</b>
+                <input type="password" name="pwd">
+            </label>
+
+            <label id="admin-button">
+                <input type="checkbox" name="admin" style="margin-bottom:15px"> Administrator?
+            </label>
+
+            <button class="sign-button">Sign up</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
